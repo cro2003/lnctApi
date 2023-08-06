@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lnctApi package &mdash; lnctApi 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <style>
+        #json{margin-bottom: 6px;
+        border: none;
+        background: #f0f0f0;
+        color: #555;
+    }
+    </style>
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            lnctApi
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">lnctApi package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-lnctApi.accsoft_api">lnctApi.accsoft_api module</a><ul>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft"><code class="docutils literal notranslate"><span class="pre">accsoft</span></code></a><ul>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.attendanceDatewise"><code class="docutils literal notranslate"><span class="pre">accsoft.attendanceDatewise()</span></code></a></li>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.attendancePercentage"><code class="docutils literal notranslate"><span class="pre">accsoft.attendancePercentage()</span></code></a></li>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.attendanceSubjectwise"><code class="docutils literal notranslate"><span class="pre">accsoft.attendanceSubjectwise()</span></code></a></li>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.feeStatus"><code class="docutils literal notranslate"><span class="pre">accsoft.feeStatus()</span></code></a></li>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.feetxn"><code class="docutils literal notranslate"><span class="pre">accsoft.feetxn()</span></code></a></li>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.fineRecord"><code class="docutils literal notranslate"><span class="pre">accsoft.fineRecord()</span></code></a></li>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.libRecord"><code class="docutils literal notranslate"><span class="pre">accsoft.libRecord()</span></code></a></li>
+<li><a class="reference internal" href="#lnctApi.accsoft_api.accsoft.profile"><code class="docutils literal notranslate"><span class="pre">accsoft.profile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-lnctApi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lnctApi</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">lnctApi package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lnctApi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lnctapi-package">
+<h1>lnctApi package<a class="headerlink" href="#lnctapi-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-lnctApi.accsoft_api">
+<span id="lnctapi-accsoft-api-module"></span><h2>lnctApi.accsoft_api module<a class="headerlink" href="#module-lnctApi.accsoft_api" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lnctApi.accsoft_api.</span></span><span class="sig-name descname"><span class="pre">accsoft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pswd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This Class Contains all the Function for getting Student Accsoft information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arg<span class="colon">:</span></dt>
+<dd class="field-odd"><p>userId (str): Accsoft Identification Number given by College<br>
+pswd (str): Password for the Accsoft Id</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.attendanceDatewise">
+<span class="sig-name descname"><span class="pre">attendanceDatewise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.attendanceDatewise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.attendanceDatewise" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches Attendance of the Student Datewise</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns datewise attendance in following format</dt><dd><dl id="json">
+{<dd><p>“name”: STUDENT_NAME,<br>
+“attendance”: [{</p>
+<blockquote>
+<div><p>”day”: DATE,<br>
+“main”: [{</p>
+<blockquote>
+<div><p>”subject”: SUBJECT,<br>
+“status”: STATUS</p>
+</div></blockquote>
+<dl class="simple">
+}, {<dd><p>“subject”: SUBJECT,<br>
+“status”: STATUS</p>
+</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+<dl>
+}, {<dd><p>“day”: DATE,<br>
+“main”: [{</p>
+<blockquote>
+<div><p>”subject”: SUBJECT,<br>
+“status”: STATUS</p>
+</div></blockquote>
+<dl class="simple">
+}, {<dd><p>“subject”: SUBJECT,<br>
+“status”: STATUS</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.attendancePercentage">
+<span class="sig-name descname"><span class="pre">attendancePercentage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.attendancePercentage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.attendancePercentage" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches short information on Attendace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns attendance information in following format</dt><dd><dl class="simple", id="json">
+{<dd><p>“name”: NAME,<br>
+“totalLectures”: TOTAL_LECTURES_HELD,<br>
+“present”: TOTAL_LECTURES_PRESENT,<br>
+“absent”: TOTAL_LECTURES_ABSENT,<br>
+“percentage”: TOTAL_PERCENTAGE</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.attendanceSubjectwise">
+<span class="sig-name descname"><span class="pre">attendanceSubjectwise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.attendanceSubjectwise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.attendanceSubjectwise" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches Attendance of the Student Subjectwise</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns subjectwise attendance in following format</dt><dd><dl id="json">
+{<dd><p>“name”: STUDENT_NAME,<br>
+“attendance”: [{</p>
+<blockquote>
+<div><p>”subject”: SUBJECT_NAME,<br>
+“subShort”: SHORT_NAME_SUBJECT,<br>
+“totalLectures”: TOTAL_HELD_LECTURES,<br>
+“present”: LECTURES_PRESENT,<br>
+“absent”: LECTURES_ABSENT</p>
+</div></blockquote>
+<dl class="simple">
+}, {<dd><p>“subject”: SUBJECT_NAME,<br>
+“subShort”: SHORT_NAME_SUBJECT,<br>
+“totalLectures”: TOTAL_HELD_LECTURES,<br>
+“present”: LECTURES_PRESENT,<br>
+“absent”: LECTURES_ABSENT</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.feeStatus">
+<span class="sig-name descname"><span class="pre">feeStatus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.feeStatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.feeStatus" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches Fees Information which are Paid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns Paid Fees information in following format</dt><dd><dl id="json">
+{<dd><p>“name”: STUDENT_NAME,<br>
+“feesInfo”: [{</p>
+<blockquote>
+<div><p>”txnDate”: TRANSACTION_DATE,<br>
+“VNumber”: VOUCHER_NUMBER,<br>
+“totalAmt”: FEES_PAID</p>
+</div></blockquote>
+<dl class="simple">
+}, {<dd><p>“txnDate”: TRANSACTION_DATE,<br>
+“VNumber”: VOUCHER_NUMBER,<br>
+“totalAmt”: FEES_PAID</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.feetxn">
+<span class="sig-name descname"><span class="pre">feetxn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.feetxn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.feetxn" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches All the Fees Transaction which are Initiated through Accosft</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns Online Fees Transactions in following format</dt><dd><dl id="json">
+{<dd><p>“name”: STUDENT_NAME,<br>
+“feetxn”: [{</p>
+<blockquote>
+<div><p>”date”: TRANSACTION_DATE,<br>
+“paymentId”: PAYMENT_ID,<br>
+“amount”: TRANSACTION_AMOUNT,<br>
+“status”: TRANSACTION_STATUS</p>
+</div></blockquote>
+<dl class="simple">
+}, {<dd><p>“date”: TRANSACTION_DATE,
+“paymentId”: PAYMENT_ID,<br>
+“amount”: TRANSACTION_AMOUNT,<br>
+“status”: TRANSACTION_STATUS</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.fineRecord">
+<span class="sig-name descname"><span class="pre">fineRecord</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.fineRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.fineRecord" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches All the Fine Records of the Library</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns Fine Records in following format</dt><dd><dl id="json">
+{<dd><p>“name”: STUDENT_NAME,<br>
+“fine”: [{</p>
+<blockquote>
+<div><p>”libName”: LIBRARY_NAME,<br>
+“collectedBy”: FINE_COLLECTOR,<br>
+“date”: FINE_DATE,<br>
+“amt”: FINED_AMOUNT</p>
+</div></blockquote>
+<dl class="simple">
+}, {<dd><p>“libName”: LIBRARY_NAME,<br>
+“collectedBy”: FINE_COLLECTOR,<br>
+“date”: FINE_DATE,<br>
+“amt”: FINED_AMOUNT</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.libRecord">
+<span class="sig-name descname"><span class="pre">libRecord</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.libRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.libRecord" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches All the Records of Issued Book from the Library</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns Issued Book information in following format</dt><dd><dl id="json">
+{<dd><p>“name”: STUDENT_NAME,<br>
+“bookRecord”: [{</p>
+<blockquote>
+<div><p>”date”: ISSUED_DATE,<br>
+“bookName”: BOOK_NAME,<br>
+“dueDate”: DUE_DATE,<br>
+“returnedDate”: RETURNED_DATE,<br>
+“lateDay”: LATE_DAY</p>
+</div></blockquote>
+<dl class="simple">
+}, {<dd><p>“date”: ISSUED_DATE,<br>
+“bookName”: BOOK_NAME,<br>
+“dueDate”: DUE_DATE,<br>
+“returnedDate”: RETURNED_DATE,<br>
+“lateDay”: LATE_DAY</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lnctApi.accsoft_api.accsoft.profile">
+<span class="sig-name descname"><span class="pre">profile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lnctApi/accsoft_api.html#accsoft.profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lnctApi.accsoft_api.accsoft.profile" title="Permalink to this definition"></a></dt>
+<dd><p>This Function fetches profile information of the Student</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl>
+<dt>json: Returns profile information in following format</dt><dd><dl class="simple" id="json">
+{<dd><p>“name”: STUDENT_NAME,<br>
+“college”: COLLEGE_NAME,<br>
+“course”: COURSE,<br>
+“section”: SECTION,<br>
+“enrollmentId”: ENROLLMENT_NUMBER,<br>
+“scholarId”: SCHOLAR_ID,<br>
+“accsoftId”: ACCSOFT_ID,<br>
+“MobileNumber”: MOBILE_NUMBER,<br>
+“email”: EMAIL_ID,<br>
+“profileImage”: PROFILE_IMAGE_LINK</p>
+</dd>
+    }
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-lnctApi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-lnctApi" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Chirag Rai.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

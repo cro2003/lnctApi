@@ -1,0 +1,21 @@
+lnctApi package
+===============
+
+Submodules
+----------
+
+lnctApi.accsoft\_api module
+---------------------------
+
+.. automodule:: lnctApi.accsoft_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: lnctApi
+   :members:
+   :undoc-members:
+   :show-inheritance:
