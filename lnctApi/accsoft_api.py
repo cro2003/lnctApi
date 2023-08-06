@@ -229,9 +229,14 @@ class accsoft:
         feelo = []
         for x in soup.find_all('option'):
             year = x['value']
-            data = {'__EVENTTARGET': 'ctl00$ContentPlaceHolder1$ddlfinyear', '__EVENTARGUMENT': '', '__LASTFOCUS': '', '__VIEWSTATE': soup.find(id='__VIEWSTATE')['value'], '__VIEWSTATEGENERATOR': soup.find(id='__VIEWSTATEGENERATOR')['value'], '__VIEWSTATEENCRYPTED': '', '__PREVIOUSPAGE': soup.find(id='__PREVIOUSPAGE')['value'], '__EVENTVALIDATION': soup.find(id='__EVENTVALIDATION')['value'], 'ctl00$hdnCompanyID': soup.find(id='ctl00_hdnCompanyID')['value'], 'ctl00$hdnFinYearID': soup.find(id='ctl00_hdnFinYearID')['value'], 'ctl00$hdnStudentID': soup.find(id='ctl00_hdnStudentID')['value'], 'ctl00$ContentPlaceHolder1$hdnNoOfPrntCopy': soup.find(id='ctl00_ContentPlaceHolder1_hdnNoOfPrntCopy')['value'], 'ctl00$ContentPlaceHolder1$hdnrid': '', 'ctl00$ContentPlaceHolder1$ddlfinyear': year, 'ctl00$ContentPlaceHolder1$VSFlexGrid1$ctl02$hdnFeeRcptID': soup.find(id='ctl00_ContentPlaceHolder1_VSFlexGrid1_ctl02_hdnFeeRcptID')['value']}
+            if soup.find(id='ctl00_ContentPlaceHolder1_VSFlexGrid1_ctl02_hdnFeeRcptID') == None:
+                receiptId = None
+            else:
+                receiptId = soup.find(id='ctl00_ContentPlaceHolder1_VSFlexGrid1_ctl02_hdnFeeRcptID')['value']
+            data = {'__EVENTTARGET': 'ctl00$ContentPlaceHolder1$ddlfinyear', '__EVENTARGUMENT': '', '__LASTFOCUS': '', '__VIEWSTATE': soup.find(id='__VIEWSTATE')['value'], '__VIEWSTATEGENERATOR': soup.find(id='__VIEWSTATEGENERATOR')['value'], '__VIEWSTATEENCRYPTED': '', '__PREVIOUSPAGE': soup.find(id='__PREVIOUSPAGE')['value'], '__EVENTVALIDATION': soup.find(id='__EVENTVALIDATION')['value'], 'ctl00$hdnCompanyID': soup.find(id='ctl00_hdnCompanyID')['value'], 'ctl00$hdnFinYearID': soup.find(id='ctl00_hdnFinYearID')['value'], 'ctl00$hdnStudentID': soup.find(id='ctl00_hdnStudentID')['value'], 'ctl00$ContentPlaceHolder1$hdnNoOfPrntCopy': soup.find(id='ctl00_ContentPlaceHolder1_hdnNoOfPrntCopy')['value'], 'ctl00$ContentPlaceHolder1$hdnrid': '', 'ctl00$ContentPlaceHolder1$ddlfinyear': year, 'ctl00$ContentPlaceHolder1$VSFlexGrid1$ctl02$hdnFeeRcptID': receiptId}
             response = feeSession.post('https://portal.lnct.ac.in/Accsoft2/Parents/FeesReceipts.aspx', data=data)
             soup = BeautifulSoup(response.text, 'html.parser')
+            if soup.find(id='ctl00_ContentPlaceHolder1_VSFlexGrid1').find('td').get_text().strip() == 'There is No Record to View !':continue
             table = soup.find(id='ctl00_ContentPlaceHolder1_VSFlexGrid1')
             for z in table.find_all('tr'):
                 if z.find_all('th') == []:
