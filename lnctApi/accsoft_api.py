@@ -30,7 +30,7 @@ class accsoft:
         data = {'ctl00$ScriptManager1': 'ctl00$cph1$UpdatePanel5|ctl00$cph1$btnStuLogin', '__EVENTTARGET': '', '__EVENTARGUMENT': '', '__LASTFOCUS': '', '__VIEWSTATE': viewstate, '__VIEWSTATEGENERATOR': viewstategenerator, '__EVENTVALIDATION': eventvalidation, 'ctl00$cph1$rdbtnlType': '2', 'ctl00$cph1$hdnSID': '', 'ctl00$cph1$hdnSNO': '', 'ctl00$cph1$hdnRDURL': '', 'ctl00$cph1$txtStuUser': self.userId, 'ctl00$cph1$txtStuPsw': self.pswd, '__ASYNCPOST': 'true', 'ctl00$cph1$btnStuLogin': 'Login >>'}
         response = self.session.post('https://portal.lnct.ac.in/Accsoft2/StudentLogin.aspx', data=data)
         if BeautifulSoup(response.text, 'html.parser').find(id='ctl00_cph1_lblErrMsgStu')!=None:
-            return {"error": BeautifulSoup(response.text, 'html.parser').find(id='ctl00_cph1_lblErrMsgStu').get_text()}
+            return json.dumps({"error": BeautifulSoup(response.text, 'html.parser').find(id='ctl00_cph1_lblErrMsgStu').get_text()})
 
     def profile(self):
         """This Function fetches profile information of the Student
