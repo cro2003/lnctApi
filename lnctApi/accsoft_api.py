@@ -11,7 +11,7 @@ class accsoft:
         userId (str): Accsoft Identification Number given by College
         pswd (str): Password for the Accsoft Id
     """
-    def __init__(self, userId, pswd):
+    def __init__(self, userId: str, pswd: str):
         self.session = requests.Session()
         self.userId = userId
         self.pswd = pswd
@@ -98,7 +98,7 @@ class accsoft:
             percentage = round(percentage, 2)
         else:
             percentage = 0
-        product = {"name": name, "totalLectures": TotalLectures, "present": present, "absent": absent, "percentage": f"{percentage}"}
+        product = {"name": name, "totalLectures": TotalLectures, "present": present, "absent": absent, "percentage": percentage}
         return json.dumps(product)
 
     def attendanceDatewise(self):
@@ -242,7 +242,7 @@ class accsoft:
                 if z.find_all('th') == []:
                     date = z.find_all('td')[2].get_text().replace('\n', '')
                     voucherNumber = z.find_all('td')[3].get_text().replace('\n', '')
-                    ttlAmt = z.find_all('td')[4].get_text().replace('\n', '')
+                    ttlAmt = float(z.find_all('td')[4].get_text().replace('\n', ''))
                     value = {"txnDate": date, "VNumber": voucherNumber, "totalAmt": ttlAmt}
                     feelo.append(value)
         product['feesInfo'] = list(reversed(feelo))
@@ -289,7 +289,7 @@ class accsoft:
                 if z.find_all('th') == []:
                     date = z.find_all('td')[0].get_text().replace('\n', '')
                     pId = z.find_all('td')[1].get_text().replace('\n', '')
-                    txnAmt = z.find_all('td')[2].get_text().replace('\n', '')
+                    txnAmt = float(z.find_all('td')[2].get_text().replace('\n', ''))
                     status = z.find_all('td')[3].get_text().replace('\n', '')
                     value = {"date": date, "paymentId": pId, "amount": txnAmt, "status":status}
                     feelo.append(value)
@@ -327,7 +327,7 @@ class accsoft:
         product = {"name": name, "bookRecord": []}
         table = soup.find(id='ctl00_ContentPlaceHolder1_grdCRList')
         if table==None:
-            return product
+            return json.dumps(product)
         records = []
         for x in table.find_all('tr'):
             if x.find_all('td')==[]:continue
@@ -335,7 +335,7 @@ class accsoft:
             bookName = x.find_all('td')[4].get_text()
             dueDate = x.find_all('td')[6].get_text()
             returnedDate = x.find_all('td')[7].get_text().replace('\n', '')
-            lateDay = x.find_all('td')[8].get_text()
+            lateDay = int(x.find_all('td')[8].get_text())
             value = {'date': date, 'bookName': bookName, 'dueDate': dueDate, 'returnedDate': returnedDate, 'lateDay': lateDay}
             records.append(value)
         product['bookRecord'] = records
@@ -371,13 +371,13 @@ class accsoft:
         record = []
         table = soup.find(id='ctl00_ContentPlaceHolder1_GrdFine')
         if table==None:
-            return product
+            return json.dumps(product)
         for x in table.find_all('tr'):
             if x.find_all('td')==[]:continue
             libName = x.find_all('td')[1].get_text()
             collectedBy = x.find_all('td')[2].get_text()
             date = x.find_all('td')[3].get_text()
-            amt = x.find_all('td')[8].get_text()
+            amt = float(x.find_all('td')[8].get_text())
             record.append({'libName':libName, 'collectedBy':collectedBy, 'date':date, 'amt':amt})
         product['fine'] = record
         return json.dumps(product)
