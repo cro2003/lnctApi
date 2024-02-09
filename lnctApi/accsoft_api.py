@@ -1,7 +1,6 @@
 import re
 import json
 import requests
-import decimal
 from bs4 import BeautifulSoup
 
 class accsoft:
@@ -90,11 +89,14 @@ class accsoft:
         response = self.session.get('https://portal.lnct.ac.in/Accsoft2/Parents/StuAttendanceStatus.aspx')
         soup = BeautifulSoup(response.text, 'html.parser')
         name = soup.find(id='ctl00_ContentPlaceHolder1_txtStudentName')['value']
-        TotalLectures = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotperiod')[0].get_text()))
-        present = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotalp')[0].get_text()))
-        absent = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotala')[0].get_text()))
+        table = soup.find(id="ctl00_ContentPlaceHolder1_Gridview1")
+        if table.find("td").get_text() == "Record Not Found":
+            return json.dumps({"name": name, "totalLectures": 0, "present": 0, "absent": 0, "percentage": 0})
+        TotalLectures = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotperiod11')[0].get_text()))
+        present = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotalp11')[0].get_text()))
+        absent = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotala11')[0].get_text()))
         if TotalLectures != 0:
-            percentage = decimal.Decimal(present * 100 / TotalLectures)
+            percentage = (present * 100 )/ TotalLectures
             percentage = round(percentage, 2)
         else:
             percentage = 0
@@ -136,7 +138,7 @@ class accsoft:
         soup = BeautifulSoup(response.text, 'html.parser')
         name = soup.find(id='ctl00_ContentPlaceHolder1_txtStudentName')['value']
         product = {"name": name, "attendance": []}
-        table = soup.find(class_="mGrid")
+        table = soup.find(id="ctl00_ContentPlaceHolder1_Gridview1")
         if table.find("td").get_text() == "Record Not Found":
             return json.dumps(product)
         table = table.find_all("tr")
@@ -145,9 +147,9 @@ class accsoft:
         for x in table:
             new = x.find_all("td")
             if new == []: continue
-            day = new[1].get_text()
-            subject = new[3].get_text()
-            status = new[4].get_text()
+            day = new[1].get_text().strip().replace('\n', '')
+            subject = new[3].get_text().strip().replace('\n', '')
+            status = new[4].get_text().strip().replace('\n', '')
             if day == prevDay:
                 product["attendance"][index]["main"].append({"subject": subject, "status": status})
             else:
