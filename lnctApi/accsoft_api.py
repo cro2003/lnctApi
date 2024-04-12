@@ -92,7 +92,7 @@ class accsoft:
         table = soup.find(id="ctl00_ContentPlaceHolder1_Gridview1")
         if table.find("td").get_text() == "Record Not Found":
             return json.dumps({"name": name, "totalLectures": 0, "present": 0, "absent": 0, "percentage": 0})
-        TotalLectures = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotperiod11')[0].get_text()))
+        TotalLectures = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotperiod111')[0].get_text()))
         present = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotalp11')[0].get_text()))
         absent = int(re.sub('\D', '', soup.find_all(id='ctl00_ContentPlaceHolder1_lbltotala11')[0].get_text()))
         if TotalLectures != 0:
